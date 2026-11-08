@@ -367,7 +367,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
     <div class="cards">
     <article class="step reveal" data-d="evaluateur" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg></span>Côté évaluateur</h3><p>Il note sur son téléphone et ne voit qu'un numéro. INES vérifie que c'est le bon candidat.</p><div class="who"><span class="w-eva"><i></i>Évaluateurs</span></div></article>
     <article class="step reveal" data-d="ps" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.7 3.6-6 7-6s6.2 2.3 7 6"/></svg></span>Côté PS et PSS</h3><p>Le même rôle pour chaque candidat ; une information seulement si on la demande.</p><div class="who"><span class="w-ps"><i></i>PS et PSS</span></div></article>
-    <article class="step reveal" data-d="equipe" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span>Côté équipe</h3><p>L'onglet En direct montre les grilles en retard ou à vérifier.</p><div class="who"><span class="w-eq"><i></i>Équipe</span></div></article>
+    <article class="step reveal" data-d="equipe" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span>Côté équipe</h3><p>En direct : grilles en retard ou à vérifier, et un message en bandeau dans les salles.</p><div class="who"><span class="w-eq"><i></i>Équipe</span></div></article>
     </div>
   </div>
 </section>
@@ -378,7 +378,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
   <div class="cards">
     <article class="step reveal" data-d="resultats" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>Résultats</h3><p>Notes et rang au fil des grilles ; le détail après la dernière série.</p><div class="who"><span class="w-stu"><i></i>Étudiants</span><span class="w-eq"><i></i>Équipe</span></div></article>
     <article class="step reveal" data-d="reclamations" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/><path d="M12 8v4M12 15.5v.5"/></svg></span>Réclamations</h3><p>Une par station, 7 jours par défaut ; la note se recalcule.</p><div class="who"><span class="w-stu"><i></i>Étudiants</span><span class="w-eq"><i></i>Équipe</span></div></article>
-    <article class="step reveal" data-d="bilan" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M8 11h6"/></svg></span>Bilan des stations</h3><p>Items ratés par tous, écarts entre évaluateurs, stations trop dures.</p><div class="who"><span class="w-eq"><i></i>Équipe</span><span class="w-red"><i></i>Rédacteurs et relecteurs</span></div></article>
+    <article class="step reveal" data-d="bilan" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M8 11h6"/></svg></span>Bilan des stations</h3><p>Items ratés par tous, écarts entre évaluateurs, avis des étudiants et de l'équipe.</p><div class="who"><span class="w-eq"><i></i>Équipe</span><span class="w-red"><i></i>Rédacteurs et relecteurs</span></div></article>
     <article class="step reveal" data-d="rgpd" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12h6"/></svg></span>Données personnelles</h3><p>Les identités sont effacées ; les statistiques et la progression restent.</p><div class="who"><span class="w-eq"><i></i>Équipe</span></div></article>
   </div>
 </section>
@@ -424,6 +424,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
     <details data-f="ben"><summary>Un candidat n'est pas sur la liste.</summary><p>Ne le refuse pas toi-même : appelle l'équipe, qui vérifie dans INES (liste d'attente, changement de créneau, billet remboursé).</p></details>
     <details data-f="ben"><summary>Qui gère le chrono ?</summary><p>L'équipe. Une sonnerie commune marque chaque changement de salle, audible partout. Personne n'a à chronométrer dans sa salle.</p></details>
     <details data-f="ben"><summary>Il manque du matériel dans une salle.</summary><p>La réserve est à la table de l'équipe : gants, grilles papier, stylos, solution hydroalcoolique. Au besoin, regarde la liste de la salle dans l'onglet Matériel.</p></details>
+    <details data-f="tous"><summary>Et après la session, on me demande quelque chose ?</summary><p>Le lendemain, tu reçois un merci avec un lien vers ton espace : trois questions et un mot libre sur la journée. Deux minutes, lues par l'équipe pour préparer la suivante.</p></details>
     <details data-f="tous"><summary>Quand les étudiants ont-ils leurs résultats ?</summary><p>La note par station arrive dans leur espace. Le détail des grilles et les commentaires ne s'affichent qu'après la dernière série de la session, pour que rien ne circule d'un jour à l'autre. Ensuite, ils ont quelques jours pour faire une réclamation.</p></details>
   </div>
 
@@ -602,7 +603,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
         ['La grille', 'chaque item : observé (1) ou non (0). Communication : cinq niveaux de 0 à 1. Un mot de retour pour le candidat.'],
         ['Enregistrer', 'si le candidat n\'est pas celui prévu dans la salle à cette heure, INES demande confirmation.'],
       ],
-      tips: ['Sans réseau, la grille attend sur le téléphone (« En attente d\'envoi ») et part dès que la connexion revient.', 'Un absent : cocher « Absent ».', 'En binôme : chacun sa grille, la note est la moyenne.', 'La course des évaluateurs avance à chaque grille saisie : de quoi éviter de tout saisir à la fin.'] },
+      tips: ['Un message de l\'équipe peut s\'afficher en bandeau en haut de l\'écran : « Vu » le masque.', 'Sans réseau, la grille attend sur le téléphone (« En attente d\'envoi ») et part dès que la connexion revient.', 'Un absent : cocher « Absent ».', 'En binôme : chacun sa grille, la note est la moyenne.', 'La course des évaluateurs avance à chaque grille saisie : de quoi éviter de tout saisir à la fin.'] },
     ps: { p: 3, title: 'Dans la salle, côté PS et PSS', who: ['ps'],
       lead: 'Le patient standardisé (ou le professionnel de santé standardisé) joue un rôle écrit à l\'avance, le même pour chaque candidat.',
       mock: `<div class="m-script"><div><b>Dit d'emblée</b><span>« J'ai mal à la poitrine depuis ce matin. »</span></div><div><b>Sur demande</b><span>Fumeur, 20 paquets-années. Douleur qui serre.</span></div><div class="no"><b>Jamais</b><span>Le diagnostic, les termes médicaux.</span></div></div>`,
@@ -619,6 +620,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
         ['En direct › Grilles en retard', 'les salles qui n\'ont pas encore saisi les candidats déjà passés.'],
         ['En direct › Grilles à vérifier', 'les grilles enregistrées avant le passage prévu du candidat : souvent une erreur de numéro.'],
         ['Bulletin du candidat', 'pour supprimer une grille erronée. L\'action est notée dans le journal.'],
+        ['En direct › Message aux salles', 'un message (« Pause prolongée de 5 min », « B3 : le PS change ») pour toutes les salles ou une seule. Il s\'affiche en bandeau sur les téléphones des évaluateurs, à l\'accueil et sur l\'écran de projection, en moins de 30 secondes.'],
         ['Mode projection', 'un écran à l\'accueil : heure, série et tour en cours, grilles en retard, course des évaluateurs.'],
       ],
       tips: ['Un évaluateur qui ne peut plus ouvrir sa salle : Réglages › Codes des salles › nouveau code pour cette salle.'] },
@@ -658,6 +660,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
         ['Analyse', 'items que personne ne réussit (ou que tout le monde réussit), stations trop faciles ou trop dures.'],
         ['Évaluateurs', 'écarts de sévérité entre évaluateurs et au sein d\'un binôme, notes qui se durcissent en fin de journée.'],
         ['Matin et après-midi', 'si une série a été avantagée.'],
+        ['L\'avis de l\'équipe', 'le lendemain de leur dernière demi-journée, bénévoles et évaluateurs reçoivent un merci (grilles saisies, salle, rôle) et donnent leur avis dans leur espace. Le résumé, sans nom, est dans Analyse à côté de celui des étudiants.'],
         ['Banque de stations', 'la station corrigée y retourne pour une prochaine session.'],
       ],
       tips: ['Le calcul se fait dans le navigateur : l\'onglet peut mettre quelques secondes à s\'ouvrir.'] },
