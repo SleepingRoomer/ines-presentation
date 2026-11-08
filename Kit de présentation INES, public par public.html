@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit de présentation INES, public par public</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* Kit de présentation des ECOS blancs d'OMAS Externat : une vue par public, les mêmes schémas, des mots adaptés.
+   Identité INES : bleu OMAS (circuit A, évaluateurs), turquoise (circuit B, étudiants), violet (PS et PSS), ambre (équipe et bénévoles). */
+:root {
+  --bg:#fff; --soft:#f5f6fa; --soft-2:#eceef5; --line:#e3e5ee; --ink:#191a3f; --ink-2:#4a4c68; --ink-3:#8c8ea6;
+  --a:#2d2f84; --a-soft:#ecedf7; --b:#00a09a; --b-ink:#00807b; --b-soft:#ddf3f1; --lav:#abacce;
+  --stu:#00807b; --stu-soft:#ddf3f1; --eva:#2d2f84; --eva-soft:#ecedf7; --ps:#6b4f9e; --ps-soft:#ede7f6; --team:#b9770e; --team-soft:#fbf1df;
+  --text:"Rethink Sans",system-ui,-apple-system,"Segoe UI",sans-serif; color-scheme:light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#121318; --soft:#1b1d24; --soft-2:#22242e; --line:#2c2f38; --ink:#eceef3; --ink-2:#b2b6c1; --ink-3:#858a96;
+  --a:#a9abef; --a-soft:#2a2c5c; --b:#3fd3cb; --b-ink:#3fd3cb; --b-soft:#123d3c; --lav:#56588a;
+  --stu:#3fd3cb; --stu-soft:#123d3c; --eva:#a9abef; --eva-soft:#2a2c5c; --ps:#c7aef0; --ps-soft:#2f2544; --team:#f0b452; --team-soft:#3a2e16; color-scheme:dark; } }
+*{box-sizing:border-box} html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 15.5px/1.55 var(--text);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:28px max(16px,3vw) 72px;display:grid;gap:28px}
+.ines-logo{display:block;height:38px;width:auto}
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+header.top{display:grid;gap:14px}
+.brand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand .by{font-size:13px;color:var(--ink-2)} .brand .by b{color:var(--a)} .brand .by b i{color:var(--b-ink);font-style:normal}
+h1{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.015em}
+.lede{max-width:74ch;color:var(--ink-2);font-size:16.5px}
+
+/* ---------- choix du public ---------- */
+.pubs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.pub{display:grid;gap:6px;text-align:left;border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:16px;padding:14px 16px;cursor:pointer;font:inherit;transition:border-color .15s,transform .15s}
+.pub:hover{transform:translateY(-1px)} .pub:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.pub .ico{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--c-soft);color:var(--c)}
+.pub .ico svg{width:24px;height:24px}
+.pub b{font-size:16px} .pub span{font-size:13px;color:var(--ink-2)}
+.pub.on{border-color:var(--c);background:var(--c-soft)}
+.pub[data-c="stu"]{--c:var(--stu);--c-soft:var(--stu-soft)} .pub[data-c="eva"]{--c:var(--eva);--c-soft:var(--eva-soft)}
+.pub[data-c="ps"]{--c:var(--ps);--c-soft:var(--ps-soft)} .pub[data-c="team"]{--c:var(--team);--c-soft:var(--team-soft)} .pub[data-c="all"]{--c:var(--ink);--c-soft:var(--soft)}
+
+/* ---------- vues ---------- */
+.view{display:none;gap:30px} .view.on{display:grid}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:center;background:var(--c-soft);border-radius:22px;padding:28px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.hero h2{font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-.01em}
+.hero .big{font-size:17px;color:var(--ink-2);margin-top:10px;max-width:60ch}
+.hero .tag{display:inline-block;background:var(--c);color:#fff;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.hero svg{width:100%;height:auto;display:block}
+.view[data-c="stu"]{--c:var(--stu);--c-soft:var(--stu-soft)} .view[data-c="eva"]{--c:var(--eva);--c-soft:var(--eva-soft)}
+.view[data-c="ps"]{--c:var(--ps);--c-soft:var(--ps-soft)} .view[data-c="team"]{--c:var(--team);--c-soft:var(--team-soft)} .view[data-c="all"]{--c:var(--a);--c-soft:var(--soft)}
+section.block{display:grid;gap:14px}
+section.block > h3{font-size:22px;font-weight:800;display:flex;align-items:center;gap:10px}
+section.block > h3 .n{width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;display:inline-grid;place-items:center;font-size:14px}
+.sub{color:var(--ink-2);max-width:78ch}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:grid;gap:8px}
+.card h4{font-size:15.5px;font-weight:800}
+.card.soft{background:var(--soft);border-color:transparent}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.fig{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:10px}
+.fig svg{width:100%;max-width:760px;height:auto;display:block;margin:0 auto} .fig text{font-family:var(--text)}
+.fig .cap{font-size:13px;color:var(--ink-2)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px 12px;counter-reset:s;margin-top:8px}
+.step{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 16px 16px 18px;display:grid;gap:6px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-12px;left:14px;width:26px;height:26px;border-radius:50%;background:var(--c);color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center}
+.step b{font-size:15px} .step span{font-size:14px;color:var(--ink-2)}
+.step .when{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.rules{display:grid;gap:10px}
+.rule{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.rule .ic{width:44px;height:44px;border-radius:12px;background:var(--c-soft);color:var(--c);display:grid;place-items:center} .rule .ic svg{width:26px;height:26px}
+.rule b{display:block;font-size:15px} .rule span{font-size:14px;color:var(--ink-2)}
+.phone{width:200px;border:2px solid var(--line);border-radius:26px;padding:12px 10px;background:var(--bg);display:grid;gap:8px;font-size:11.5px;box-shadow:0 10px 30px rgba(25,26,63,.08)}
+.phone .bar{height:4px;width:60px;border-radius:4px;background:var(--line);margin:0 auto 2px}
+.phone .t{font-weight:800;font-size:12.5px}
+.phone .card-c{background:var(--a);color:#fff;border-radius:12px;padding:10px;display:grid;gap:3px} .phone .card-c .h{font-size:20px;font-weight:800;line-height:1}
+.phone .qr{width:54px;height:54px;background:repeating-conic-gradient(var(--ink) 0 25%,transparent 0 50%) 0 0/12px 12px;border-radius:4px;opacity:.85}
+.phone .row{display:flex;justify-content:space-between;gap:6px;align-items:center;border-bottom:1px solid var(--line);padding:4px 0}
+.phone .plate{display:inline-grid;place-items:center;width:26px;height:20px;border-radius:5px;color:#fff;font-weight:800;font-size:10px}
+.phone .gauge{height:7px;border-radius:7px;background:var(--line);position:relative;overflow:hidden} .phone .gauge i{position:absolute;inset:0 auto 0 0;background:var(--b);border-radius:7px}
+.phone .btn{background:var(--a);color:#fff;border-radius:9px;text-align:center;padding:6px;font-weight:700}
+.phones{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+.phones figure{margin:0;display:grid;gap:8px;justify-items:center} .phones figcaption{font-size:13px;color:var(--ink-2);text-align:center;max-width:200px}
+.remember{background:var(--c);color:#fff;border-radius:20px;padding:24px 26px;display:grid;gap:10px}
+.remember h3{font-size:20px;font-weight:800} .remember ol{margin:0;padding-left:20px;display:grid;gap:6px;font-size:16px} .remember .small{font-size:13px;opacity:.85}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:13px;font-weight:600;background:var(--bg)}
+.pill i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.quiet{color:var(--ink-3);font-size:13px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.btnx{font:700 13.5px var(--text);border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:7px 12px;cursor:pointer}
+.btnx:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:700px){.compare{grid-template-columns:1fr}}
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.who .w{display:grid;gap:8px;border-radius:16px;padding:16px;background:var(--w-soft);border:1px solid transparent}
+.who .w .ic{width:44px;height:44px;border-radius:14px;background:var(--w);color:#fff;display:grid;place-items:center} .who .w .ic svg{width:26px;height:26px}
+.who .w b{font-size:15.5px} .who .w span{font-size:13.5px;color:var(--ink-2)}
+.who .w[data-w="stu"]{--w:var(--stu);--w-soft:var(--stu-soft)} .who .w[data-w="eva"]{--w:var(--eva);--w-soft:var(--eva-soft)} .who .w[data-w="ps"]{--w:var(--ps);--w-soft:var(--ps-soft)} .who .w[data-w="team"]{--w:var(--team);--w-soft:var(--team-soft)}
+footer{color:var(--ink-3);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+@media print {
+  body{font-size:12.5px} .wrap{padding:0;gap:18px;max-width:none} .pubs,.toolbar,footer .np{display:none!important}
+  .view{display:none} .view.on{display:grid;gap:16px} .hero{break-inside:avoid;padding:18px} section.block{break-inside:avoid}
+  .remember{color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact} *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><svg class="ines-logo" xmlns="http://www.w3.org/2000/svg" viewBox="20 -10 2060 780" role="img"><title>INES</title><g fill="#2D2F84"><path d="M48 712V12H206V712Z"/><path d="M289 712V12H447L746 453V12H904V712H746L447 273V712Z"/><path d="M986 712V12H1446V148H1144V275H1399V411H1144V576H1446V712Z"/></g><g fill="#2D2F84"><path d="M1940.8 64.4H1563.7Q1590.8 38.6 1628 23Q1683 0 1751 0Q1819 0 1875.5 23.5Q1912.8 39 1940.8 64.4Z"/><path d="M1716.6 136.8H1516.8Q1525.2 111.9 1540 91.5Q1544.2 85.8 1548.7 80.4H1956.6Q1962 86.5 1967 93Q1982.1 112.9 1990.9 136.8H1779.3Q1764.2 132 1745 132Q1729.6 132.5 1716.6 136.8Z"/><path d="M1995.9 152.8Q2002.6 177.9 2003 207H1833Q1832 180 1810 156Q1808.5 154.3 1806.9 152.8H1995.9ZM1506 209.2Q1506 207.1 1506 205Q1506.4 177 1512.3 152.8H1688.6Q1671 168.9 1671 196Q1671 202.8 1672.5 209.2H1506Z"/><path d="M1769.9 281.6H1522.1Q1510.2 253.9 1507.1 225.2H1679.2Q1684.5 233.6 1693 241Q1715 260 1755.5 276Q1762.5 278.8 1769.9 281.6Z"/><path d="M1940.3 354H1578.9Q1546.6 327.2 1529.9 297.6H1813.7Q1831 303.7 1850 310Q1891 324 1922.5 342.5Q1931.8 348 1940.3 354Z"/></g><g fill="#00A09A"><path d="M1960 370Q1968.1 377.4 1975 385.5Q1990.9 404.1 2001.1 426.4H1727.5Q1722.4 424.7 1717 423Q1644.5 400 1600.2 370H1960Z"/><path d="M2007.5 442.4Q2016.3 467.9 2017.7 498.8H1845.5Q1845 497.4 1844.5 496Q1840 484 1827 472.5Q1814 461 1787.5 449Q1780.4 445.8 1772 442.4H2007.5Z"/><path d="M1696.9 571.2H1506Q1497.5 545.3 1494.9 514.8H1662.7Q1669.3 541.1 1688.5 563Q1692.4 567.5 1696.9 571.2ZM2018 514.8Q2017.5 544.8 2009.8 571.2H1828.4Q1849 552.4 1849 522Q1849 518.3 1848.7 514.8H2018Z"/><path d="M1969.6 643.6H1548.4Q1540.5 635 1533.5 625.5Q1520.6 608 1511.9 587.2H1729.6Q1744.6 591 1763 591Q1782.2 591 1797.2 587.2H2004.4Q1996.9 606.1 1985.5 623Q1978.2 633.8 1969.6 643.6Z"/><path d="M1765 724Q1691 724 1630.5 699.5Q1593.1 684.3 1564.8 659.6H1953.8Q1929 682.2 1896 697.5Q1839 724 1765 724Z"/></g></svg><span class="by">Interface numérique d'ECOS et de simulation, par <b>OMAS <i>EXTERNAT</i></b></span></div>
+  <div class="kicker">Kit de présentation</div>
+  <h1>Les ECOS blancs expliqués à chacun</h1>
+  <p class="lede">Une même organisation, quatre façons d'y prendre part. Choisis le public : la page montre ce qu'il doit comprendre, avec les mêmes schémas pour tout le monde. Chaque vue a son lien et s'imprime seule.</p>
+  <div class="pubs" role="tablist" aria-label="Public">
+    <button class="pub" data-c="all" data-v="organisation" role="tab"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span><b>L'organisation</b><span>Le socle commun : circuit, séries, qui fait quoi.</span></button>
+    <button class="pub" data-c="stu" data-v="etudiants" role="tab"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-4 9 4-9 4-9-4z"/><path d="M7 11v4c0 1.5 2.5 3 5 3s5-1.5 5-3v-4"/><path d="M21 9v5"/></svg></span><b>Étudiants</b><span>Candidats aux ECOS blancs.</span></button>
+    <button class="pub" data-c="eva" data-v="evaluateurs" role="tab"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/><path d="M15 15.5l1.2 1.2 2.3-2.4"/></svg></span><b>Évaluateurs</b><span>Médecins et internes dans les salles.</span></button>
+    <button class="pub" data-c="ps" data-v="ps-pss" role="tab"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><path d="M16 4.5a3 3 0 0 1 0 6"/><path d="M17.5 14.5c2.2.6 3.5 2.4 3.5 5.5"/></svg></span><b>PS et PSS</b><span>Patients et soignants standardisés.</span></button>
+    <button class="pub" data-c="team" data-v="benevoles" role="tab"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l2.5 2"/><path d="M9 3h6"/><path d="M19 5l1.5 1.5"/></svg></span><b>Bénévoles</b><span>Accueil, logistique, chrono.</span></button>
+  </div>
+</header>
+
+<!-- ============================ ORGANISATION ============================ -->
+<article class="view" data-c="all" id="v-organisation">
+  <div class="hero">
+    <div><span class="tag">Le socle commun</span><h2>Dix stations, deux circuits, une journée réglée à la minute.</h2>
+      <p class="big">Les ECOS blancs d'OMAS Externat reproduisent l'examen national dans ses conditions réelles : des salles, des patients joués par des étudiants, des soignants qui notent, des résultats le soir même. Tout tourne grâce à des bénévoles. INES est la plateforme qui tient le tout ensemble.</p></div>
+    <div data-fig="circuit"></div>
+  </div>
+  <section class="block"><h3><span class="n">1</span>Le circuit</h3>
+    <p class="sub">Dix stations jouées, cinq sur le circuit A (bleu) et cinq sur le circuit B (turquoise). Une série, c'est dix candidats qui tournent en même temps : les places 1 à 5 commencent par le circuit A, les places 6 à 10 par le circuit B, et tout le monde change de circuit à la pause. Chaque station a un domaine de l'examen national.</p>
+    <div class="grid2">
+      <div class="card soft"><h4>Circuit A</h4><div class="pillrow" data-slots="A"></div></div>
+      <div class="card soft"><h4>Circuit B</h4><div class="pillrow" data-slots="B"></div></div>
+    </div></section>
+  <section class="block"><h3><span class="n">2</span>Une série, minute par minute</h3>
+    <p class="sub">Tout est calé sur un tour de dix minutes : la vignette se lit devant la porte, la station dure huit minutes, puis on passe à la suivante. Après cinq tours, dix minutes de pause et changement de circuit. À la fin, trente minutes de débrief avec les évaluateurs.</p>
+    <div class="fig" data-fig="serie"></div></section>
+  <section class="block"><h3><span class="n">3</span>Une journée</h3>
+    <p class="sub">Quatre séries par jour, deux le matin et deux l'après-midi. Les évaluateurs, les PS et PSS et les bénévoles arrivent une heure avant la première convocation de leur demi-journée pour le briefing et l'installation. Une session se joue souvent sur deux week-ends.</p>
+    <div class="fig" data-fig="journee"></div></section>
+  <section class="block"><h3><span class="n">4</span>Dans la salle</h3>
+    <p class="sub">Derrière chaque porte, la même scène : un candidat, parfois un patient ou un soignant standardisé (ou un mannequin), un ou deux évaluateurs qui remplissent la grille sur leur téléphone. Le chrono est le même pour toutes les salles.</p>
+    <div class="fig" data-fig="salle"></div></section>
+  <section class="block"><h3><span class="n">5</span>Qui fait quoi</h3>
+    <div class="who">
+      <div class="w" data-w="stu"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-4 9 4-9 4-9-4z"/><path d="M7 11v4c0 1.5 2.5 3 5 3s5-1.5 5-3v-4"/><path d="M21 9v5"/></svg></span><b>Étudiants</b><span>Dix candidats par série. Ils s'inscrivent, choisissent leurs vœux de créneau, passent les dix stations, lisent leurs résultats le soir même.</span></div>
+      <div class="w" data-w="eva"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/><path d="M15 15.5l1.2 1.2 2.3-2.4"/></svg></span><b>Évaluateurs</b><span>Médecins, internes, docteurs juniors. Un ou deux par salle, la grille sur le téléphone, un mot de retour pour chaque candidat, le débrief à la fin.</span></div>
+      <div class="w" data-w="ps"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><path d="M16 4.5a3 3 0 0 1 0 6"/><path d="M17.5 14.5c2.2.6 3.5 2.4 3.5 5.5"/></svg></span><b>PS et PSS</b><span>Étudiants qui jouent le patient (PS) ou le soignant (PSS) d'après un script. La même histoire, les mêmes mots, pour chaque candidat.</span></div>
+      <div class="w" data-w="team"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l2.5 2"/><path d="M9 3h6"/><path d="M19 5l1.5 1.5"/></svg></span><b>Bénévoles et équipe</b><span>Accueil, émargement, petit déjeuner, chrono, orientation entre les circuits, matériel, salle d'attente. Ils font tenir l'horloge.</span></div>
+    </div></section>
+  <section class="block"><h3><span class="n">6</span>INES, la plateforme</h3>
+    <p class="sub">Chacun y a son espace avec un code personnel : la convocation et le parcours salle par salle pour l'étudiant, la salle et la grille pour l'évaluateur, le planning et la calibration pour les bénévoles, et pour l'équipe tout le reste (rédaction des stations, planning, résultats, analyse).</p>
+    <div class="grid3">
+      <div class="card"><h4>Avant</h4><span class="sub">Rédaction et relecture des stations, billetterie et vœux, inscriptions des bénévoles et des évaluateurs, convocations par e-mail, calibration des évaluateurs.</span></div>
+      <div class="card"><h4>Le jour J</h4><span class="sub">Émargement par QR code, saisie des grilles salle par salle (même sans réseau), suivi en direct, course des petits chevaux entre évaluateurs.</span></div>
+      <div class="card"><h4>Après</h4><span class="sub">Notes et rang, détail des grilles après la dernière série, corrections, plan de révision personnalisé, progression d'une session à l'autre, attestations.</span></div>
+    </div></section>
+  <div class="remember"><h3>Trois choses à retenir</h3><ol><li>Dix stations de huit minutes, deux circuits, changement à la pause.</li><li>Quatre séries par jour, tout le monde une heure avant pour la première.</li><li>Un code personnel INES par personne : il ouvre son espace, et sa salle le jour J.</li></ol></div>
+</article>
+
+<!-- ============================ ÉTUDIANTS ============================ -->
+<article class="view" data-c="stu" id="v-etudiants">
+  <div class="hero">
+    <div><span class="tag">Étudiants</span><h2>Passe tes ECOS comme le jour J, sans la pression du jour J.</h2>
+      <p class="big">Dix stations de huit minutes, de vrais patients standardisés, des médecins qui te notent avec la grille de l'examen. Le soir, ta note par station, ton rang, et de quoi travailler ce qui a manqué.</p></div>
+    <div data-fig="circuit"></div>
+  </div>
+  <section class="block"><h3><span class="n">1</span>Ton parcours, de l'inscription aux résultats</h3>
+    <div class="steps">
+      <div class="step"><span class="when">Avant</span><b>Tu prends ta place</b><span>Billetterie, puis tes vœux de créneau dans INES : idéal, possible ou impossible pour chaque série. Au moins six possibles, au plus trois idéaux.</span></div>
+      <div class="step"><span class="when">Avant</span><b>Ta convocation arrive</b><span>Par e-mail, avec ton code personnel. Ton espace INES montre ton jour, ton heure, ton numéro et ton parcours salle par salle.</span></div>
+      <div class="step"><span class="when">Avant</span><b>Un empêchement ?</b><span>Tu échanges ton créneau avec un autre étudiant depuis ton espace, ou tu libères ta place : quelqu'un de la liste d'attente la récupère.</span></div>
+      <div class="step"><span class="when">Jour J</span><b>Tu arrives à l'heure de convocation</b><span>Quinze minutes avant le début. Émargement avec le QR code de ton espace, petit déjeuner le matin, puis on t'emmène à ta première porte.</span></div>
+      <div class="step"><span class="when">Jour J</span><b>Dix stations, deux circuits</b><span>Deux minutes de vignette devant la porte, huit minutes dedans. Cinq stations, pause, les cinq autres. Puis trente minutes de débrief avec les évaluateurs.</span></div>
+      <div class="step"><span class="when">Après</span><b>Tes résultats, le soir même</b><span>Note par station, rang provisoire, moyenne de la promo. Le détail des grilles s'ouvre après la dernière série de la session, les corrections ensuite.</span></div>
+    </div></section>
+  <section class="block"><h3><span class="n">2</span>Ton numéro dit tout</h3>
+    <p class="sub">Un numéro comme <b>J1-S3-04</b> veut dire : premier jour de la session, troisième série, place 4. Les places 1 à 5 commencent par le circuit A, les places 6 à 10 par le circuit B. Ton espace te donne l'ordre exact de tes salles.</p>
+    <div class="fig" data-fig="serie"></div></section>
+  <section class="block"><h3><span class="n">3</span>Ton espace INES, sur ton téléphone</h3>
+    <div class="phones">
+      <figure><div class="phone"><div class="bar"></div><div class="t">Ta convocation</div><div class="card-c"><span>Dimanche 8 novembre</span><span class="h">14 h 15</span><span>Passage de 14 h 30 à 16 h 20, tu commences par le circuit A.</span></div><div class="row"><span>Ton numéro</span><b>J1-S3-04</b></div><div class="qr"></div><span class="quiet">À montrer à l'accueil</span></div><figcaption>Avant : jour, heure, numéro, QR code d'émargement, parcours salle par salle.</figcaption></figure>
+      <figure><div class="phone"><div class="bar"></div><div class="t">Tes résultats</div><div class="row"><span>Ton rang</span><b>12<sup>e</sup> sur 68</b></div><div class="row"><span>Ta moyenne</span><b>13,4 / 20</b></div><div class="row"><span class="plate" style="background:var(--a)">A1</span><span class="gauge" style="flex:1"><i style="width:72%"></i></span><b>14,4</b></div><div class="row"><span class="plate" style="background:var(--a)">A2</span><span class="gauge" style="flex:1"><i style="width:55%"></i></span><b>11,0</b></div><div class="row"><span class="plate" style="background:var(--b)">B1</span><span class="gauge" style="flex:1"><i style="width:80%"></i></span><b>16,0</b></div><span class="quiet">Mis à jour à chaque grille saisie</span></div><figcaption>Le soir : note par station, rang provisoire, points forts et points à travailler.</figcaption></figure>
+      <figure><div class="phone"><div class="bar"></div><div class="t">Station A2, le détail</div><div class="row"><span>✓ Décrit l'opacité</span><b>1/1</b></div><div class="row"><span>✗ Évoque le diagnostic</span><b>0/2</b></div><div class="row"><span>½ Propose le scanner</span><b>0,5/1</b></div><div class="row"><span>Communication</span><b>Satisfaisant</b></div><span class="quiet">« Bon début, hiérarchise tes hypothèses. »</span><div class="btn">Plan de révision</div></div><figcaption>Après la dernière série : items réussis ou manqués, le mot de l'évaluateur, la correction, ton plan de révision.</figcaption></figure>
+    </div></section>
+  <section class="block"><h3><span class="n">4</span>Comment tu es noté</h3>
+    <div class="grid2">
+      <div class="card"><h4>La grille de chaque station</h4><span class="sub">Des items d'aptitudes cliniques et techniques (observé ou non observé, chacun avec ses points) et des items de communication notés par niveaux. La note de la station vaut (aptitudes + communication) ÷ maximum × 20. Si deux évaluateurs te notent, c'est la moyenne de leurs grilles.</span></div>
+      <div class="card"><h4>Ton rang</h4><span class="sub">Calculé sur la moyenne des dix stations, parmi les candidats qui ont passé les dix. Il bouge jusqu'au dernier jour de la session, puisque tout le monde passe les mêmes stations. Les ex aequo ont le même rang.</span></div>
+    </div></section>
+  <section class="block"><h3><span class="n">5</span>Ce qu'on te demande</h3>
+    <div class="rules">
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><div><b>Les sujets restent secrets</b><span>Jusqu'au dernier passage de la session, tu ne racontes pas les stations, même à tes amis du week-end suivant. C'est pour ça que le détail des grilles n'arrive qu'après la dernière série.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>À l'heure, prêt à entrer</b><span>Blouse, stéthoscope, téléphone chargé pour le QR code. Une série en retard, c'est dix candidats et dix salles qui attendent.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span><div><b>Joue le jeu avec les PS</b><span>Les patients standardisés sont des étudiants comme toi, qui ont appris un script : parle-leur comme à un vrai patient. Ils ne t'aideront pas, c'est voulu.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/></svg></span><div><b>Dis-nous ce que tu as pensé</b><span>Deux minutes pour le questionnaire en haut de ton espace, après la session : c'est avec ça qu'on améliore la suivante.</span></div></div>
+    </div></section>
+  <div class="remember"><h3>Trois choses à retenir</h3><ol><li>Ton code personnel ouvre ton espace : convocation, QR code, parcours, résultats.</li><li>Convocation quinze minutes avant la série, pas de retard possible.</li><li>Tu ne racontes rien avant la fin de la session, et tu as tes notes le soir même.</li></ol><p class="small">Les fiches procédures ECOS sont aussi dans ton espace, pour réviser les gestes.</p></div>
+</article>
+
+<!-- ============================ ÉVALUATEURS ============================ -->
+<article class="view" data-c="eva" id="v-evaluateurs">
+  <div class="hero">
+    <div><span class="tag">Évaluateurs</span><h2>Une salle, une grille, dix candidats par série.</h2>
+      <p class="big">Vous êtes le regard clinique de la journée. Une station vous est confiée, vous notez chaque candidat sur votre téléphone en deux minutes, et votre mot de retour est ce qu'il relira le soir. Aucune préparation lourde : la vignette, la grille et une calibration de dix minutes.</p></div>
+    <div data-fig="salle"></div>
+  </div>
+  <section class="block"><h3><span class="n">1</span>Votre journée</h3>
+    <div class="steps">
+      <div class="step"><span class="when">Avant</span><b>Inscription et code personnel</b><span>Par le lien évaluateurs d'INES : vos disponibilités (demi-journée ou journée), vos disciplines préférées. Vous recevez un code qui ouvre votre espace.</span></div>
+      <div class="step"><span class="when">Avant</span><b>Votre station et la calibration</b><span>Dans votre espace : la salle qui vous est confiée, sa vignette, sa grille. Dix minutes pour noter un passage de référence et voir où vous vous écartez de la correction de l'équipe.</span></div>
+      <div class="step"><span class="when">Jour J, H-1</span><b>Briefing</b><span>Une heure avant la première convocation : café, rappel des règles de notation, rencontre avec le PS ou le PSS de votre salle, repérage du matériel.</span></div>
+      <div class="step"><span class="when">Jour J</span><b>La série</b><span>Dix candidats, huit minutes chacun, deux minutes entre deux pour finir la grille. Votre code personnel ouvre directement votre salle sur votre téléphone, même sans réseau.</span></div>
+      <div class="step"><span class="when">Jour J</span><b>Le débrief</b><span>Trente minutes avec les dix candidats de la série : ce qui était attendu, ce qui a manqué le plus souvent, vos conseils.</span></div>
+      <div class="step"><span class="when">Après</span><b>Attestation</b><span>Une attestation de participation, avec vos grilles saisies, vos stations et vos jours, si vous l'avez demandée.</span></div>
+    </div></section>
+  <section class="block"><h3><span class="n">2</span>Le tour de dix minutes</h3>
+    <p class="sub">Le chrono est le même dans toutes les salles. Pendant que le candidat lit la vignette devant la porte, vous terminez la grille du précédent et le PS se remet en place.</p>
+    <div class="fig" data-fig="tour"></div></section>
+  <section class="block"><h3><span class="n">3</span>La grille, et comment elle devient une note</h3>
+    <div class="grid2">
+      <div class="fig" data-fig="grille"></div>
+      <div class="card" style="align-content:start">
+        <h4>Ce qui compte</h4>
+        <span class="sub">Les items d'<b>aptitudes cliniques et techniques</b> : observé ou non observé, chacun avec ses points. Les items de <b>communication et attitudes</b> : cinq niveaux, d'insuffisant à excellent.</span>
+        <h4 style="margin-top:10px">La formule</h4>
+        <span class="sub">Note = (points d'aptitudes + communication) ÷ maximum × 20. La <b>performance globale</b> que vous donnez en fin de grille ne compte pas dans la note : elle sert à l'équipe pour vérifier la grille.</span>
+        <h4 style="margin-top:10px">À deux dans la salle</h4>
+        <span class="sub">Chacun remplit sa grille, la note du candidat est la moyenne. Un item coché par un seul des deux compte pour moitié : d'où l'intérêt de la calibration.</span>
+        <h4 style="margin-top:10px">Votre mot</h4>
+        <span class="sub">Une phrase concrète, qu'il relira le soir avec sa grille : ce qu'il a bien fait, la chose à changer en priorité.</span>
+      </div>
+    </div></section>
+  <section class="block"><h3><span class="n">4</span>Les règles de la salle</h3>
+    <div class="rules">
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><div><b>On note ce qu'on observe</b><span>Pas ce qu'on devine. Un item non fait est non fait, même si le candidat « l'aurait sûrement dit ». C'est ce qui rend les salles comparables.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9l8 2M8 11l8-2" opacity=".0"/><path d="M3 3l18 18"/></svg></span><div><b>On n'intervient pas</b><span>Ni indice, ni correction pendant les huit minutes : le candidat est seul avec le patient. Le retour, c'est au débrief et dans votre mot.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>On tient le chrono</b><span>La sonnerie commande. Un candidat qui déborde décale dix salles.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><div><b>La station reste secrète</b><span>Entre deux week-ends d'une même session, les candidats passent les mêmes stations : rien ne sort de la salle.</span></div></div>
+    </div></section>
+  <section class="block"><h3><span class="n">5</span>INES sur votre téléphone</h3>
+    <div class="phones">
+      <figure><div class="phone"><div class="bar"></div><div class="t">Mon espace évaluateur</div><div class="row"><span>Dim. 8 nov., matin</span><b>Salle A2</b></div><div class="row"><span>Calibration</span><b style="color:var(--b-ink)">Accord 90 %</b></div><div class="btn">Ouvrir ma salle</div><span class="quiet">La saisie ouvre d'elle-même une heure avant la première convocation.</span></div><figcaption>Votre espace : planning, calibration, et le jour J un bouton qui ouvre votre salle.</figcaption></figure>
+      <figure><div class="phone"><div class="bar"></div><div class="t">A2 · J1-S1-03</div><div class="row"><span>Décrit l'opacité</span><b>Observé</b></div><div class="row"><span>Évoque le diagnostic</span><b style="color:#b03a2e">Non obs.</b></div><div class="row"><span>Écoute, reformule</span><b>Satisfaisant</b></div><div class="row"><span>Perf. globale</span><b>3 / 4</b></div><div class="btn">Enregistrer la grille</div><span class="quiet">Gardée sur le téléphone sans réseau, envoyée toute seule après.</span></div><figcaption>La grille : deux minutes par candidat, un mot de retour, et la suite de la liste.</figcaption></figure>
+    </div></section>
+  <div class="remember"><h3>Trois choses à retenir</h3><ol><li>Votre code personnel ouvre votre espace et votre salle : pas de code de porte à retenir.</li><li>H-1 pour le briefing, calibration faite la veille.</li><li>On note ce qu'on observe, on n'intervient pas, on écrit un mot utile.</li></ol><p class="small">Merci : sans vous, ce ne serait qu'un exercice sur papier.</p></div>
+</article>
+
+<!-- ============================ PS ET PSS ============================ -->
+<article class="view" data-c="ps" id="v-ps-pss">
+  <div class="hero">
+    <div><span class="tag">PS et PSS</span><h2>Tu joues la même scène dix fois, exactement de la même façon.</h2>
+      <p class="big">Patient standardisé (PS) ou professionnel de santé standardisé (PSS), tu es le personnage de la station. Ton script dit qui tu es, ce que tu ressens, ce que tu réponds et ce que tu ne dis jamais spontanément. Ta régularité, c'est l'équité entre les candidats.</p></div>
+    <div data-fig="salle"></div>
+  </div>
+  <section class="block"><h3><span class="n">1</span>PS ou PSS ?</h3>
+    <div class="compare">
+      <div class="card" style="border-top:4px solid var(--ps)"><h4>Patient standardisé</h4><span class="sub">Tu es le patient : entretien, annonce, éducation thérapeutique, prévention. Tu as une histoire, une plainte, une émotion, des réponses prêtes aux questions qu'on te pose. Tu ne donnes rien de plus que ce qu'on te demande.</span></div>
+      <div class="card" style="border-top:4px solid var(--ps)"><h4>Professionnel de santé standardisé</h4><span class="sub">Tu es un soignant : l'infirmière qui appelle pour un patient qui va mal, le collègue à qui on transmet un dossier, le pharmacien au téléphone. Tu réponds comme un professionnel, avec les informations prévues au script, sans en inventer.</span></div>
+    </div></section>
+  <section class="block"><h3><span class="n">2</span>Ta journée</h3>
+    <div class="steps">
+      <div class="step"><span class="when">Avant</span><b>Tu t'inscris comme bénévole</b><span>Par le lien bénévoles d'INES, en cochant PS ou PSS et ta demi-journée. Tu reçois un code personnel.</span></div>
+      <div class="step"><span class="when">Avant</span><b>Tu reçois ta station</b><span>L'équipe t'affecte une salle. Tu apprends ton script : l'histoire, les réponses aux questions probables, l'attitude à tenir, ce que tu ne dis que si on te le demande.</span></div>
+      <div class="step"><span class="when">Jour J, H-1</span><b>Briefing avec ton évaluateur</b><span>Une heure avant la première convocation : vous relisez la vignette ensemble, vous réglez les détails (position, accessoires, ce qui déclenche l'émotion), tu répètes une fois.</span></div>
+      <div class="step"><span class="when">Jour J</span><b>Dix fois la même scène</b><span>Huit minutes par candidat, deux minutes pour te remettre en place. Même entrée en matière, mêmes mots clés, même intensité, du premier au dixième.</span></div>
+      <div class="step"><span class="when">Jour J</span><b>Le débrief</b><span>Tu peux rester : ce que tu as ressenti face à chaque candidat est un retour précieux, surtout sur la communication.</span></div>
+    </div></section>
+  <section class="block"><h3><span class="n">3</span>Tes huit minutes</h3>
+    <p class="sub">Le script fixe ce que tu dis d'emblée, ce que tu dis si on te le demande, et ce que tu ne dis jamais. L'évaluateur observe le candidat, pas toi : si quelque chose cloche, un regard suffit.</p>
+    <div class="fig" data-fig="script"></div></section>
+  <section class="block"><h3><span class="n">4</span>Les cinq règles du rôle</h3>
+    <div class="rules">
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span><div><b>Même scène pour tous</b><span>Mêmes mots d'ouverture, mêmes réponses, même émotion au même moment. Le dixième candidat doit vivre la même station que le premier.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9l8 2M8 11l8-2" opacity=".0"/><path d="M3 3l18 18"/></svg></span><div><b>Tu n'aides pas</b><span>Tu réponds à ce qu'on te demande, tu ne devances pas les questions. Un silence du candidat n'est pas à toi de le combler.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6c2.5-1.5 5.5-2 8-2s5.5.5 8 2v6c0 5-4 8-8 9-4-1-8-4-8-9z"/><path d="M8 11c1 1 2 1 3 0M13 11c1 1 2 1 3 0"/><path d="M9 15c2 1.5 4 1.5 6 0"/></svg></span><div><b>Tu restes dans le rôle</b><span>Jusqu'à la sonnerie, même si tu connais le candidat, même s'il rit. Pas de commentaire sur sa prise en charge dans la salle.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></span><div><b>Tu te remets à zéro</b><span>Entre deux candidats : position de départ, accessoires en place, émotion rembobinée. Deux minutes, pas plus.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><div><b>Tu gardes le secret</b><span>La station reste confidentielle jusqu'à la fin de la session, y compris pour tes amis candidats du week-end suivant.</span></div></div>
+    </div></section>
+  <div class="remember"><h3>Trois choses à retenir</h3><ol><li>Ton script par cœur : ce que tu dis, ce que tu dis seulement si on te le demande, ce que tu ne dis jamais.</li><li>H-1 pour le briefing avec ton évaluateur, et une répétition.</li><li>Dix fois la même scène, aucune aide, remise à zéro entre deux.</li></ol><p class="small">Ton code personnel INES te donne ton planning et ta salle. Le jour J, l'équipe t'y emmène.</p></div>
+</article>
+
+<!-- ============================ BÉNÉVOLES ============================ -->
+<article class="view" data-c="team" id="v-benevoles">
+  <div class="hero">
+    <div><span class="tag">Bénévoles</span><h2>Tu fais tenir l'horloge de la journée.</h2>
+      <p class="big">Accueil, émargement, petit déjeuner, chrono et sonnerie, orientation entre les circuits, matériel des salles, salle d'attente : quarante candidats par demi-journée passent entre tes mains sans jamais croiser ceux qui n'ont pas encore passé. Une demi-journée suffit, et on t'explique tout.</p></div>
+    <div data-fig="postes"></div>
+  </div>
+  <section class="block"><h3><span class="n">1</span>Les postes du jour J</h3>
+    <div class="grid3">
+      <div class="card"><h4>Accueil et émargement</h4><span class="sub">Tu scannes le QR code de chaque candidat avec INES (ou tu le pointes à la main), tu donnes le numéro de place et tu orientes vers le petit déjeuner ou la salle d'attente. Désistements et liste d'attente se gèrent ici.</span></div>
+      <div class="card"><h4>Chrono et sonnerie</h4><span class="sub">Un seul chrono pour les dix salles : sonnerie au début du tour (lecture de la vignette), à l'entrée en salle, à la fin des huit minutes. Tu annonces la pause et le changement de circuit.</span></div>
+      <div class="card"><h4>Circulation</h4><span class="sub">Tu places les dix candidats devant leur première porte (places 1 à 5 côté A, 6 à 10 côté B), tu les fais tourner dans le bon sens, tu les fais changer de circuit à la pause.</span></div>
+      <div class="card"><h4>Salle d'attente</h4><span class="sub">Les candidats qui attendent leur série ne croisent pas ceux qui sortent. Téléphones rangés, pas de conversation sur les stations avec ceux qui ont fini.</span></div>
+      <div class="card"><h4>Matériel</h4><span class="sub">La liste de matériel de chaque station est dans INES : installation la veille ou à H-1, vérification entre deux séries (gants, compresses, mannequins remis en état, documents remis par le PS).</span></div>
+      <div class="card"><h4>Débrief et sortie</h4><span class="sub">Tu emmènes la série vers la salle de débrief avec ses évaluateurs, et tu libères les salles pour la série suivante.</span></div>
+    </div></section>
+  <section class="block"><h3><span class="n">2</span>Ta demi-journée</h3>
+    <p class="sub">Tu arrives une heure avant la première convocation de ta demi-journée. Deux séries s'enchaînent : la deuxième arrive à l'accueil pendant que la première est encore en salle.</p>
+    <div class="fig" data-fig="journee"></div></section>
+  <section class="block"><h3><span class="n">3</span>Le tour vu du couloir</h3>
+    <div class="fig" data-fig="tour"></div></section>
+  <section class="block"><h3><span class="n">4</span>Les règles d'or</h3>
+    <div class="rules">
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Le chrono ne négocie pas</b><span>Une série qui démarre en retard décale la suivante, le débrief, et le déjeuner de tout le monde.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Entrants et sortants ne se croisent pas</b><span>C'est toute la valeur de l'examen blanc : chaque série découvre les stations.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span><div><b>Un mot gentil à l'accueil</b><span>Les candidats arrivent stressés. Un sourire, le petit déjeuner, une consigne claire : ça change leur série.</span></div></div>
+      <div class="rule"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/></svg></span><div><b>Un doute ? L'équipe</b><span>Un candidat absent, un PS malade, une salle sans matériel : préviens tout de suite, on a des réserves (stations, bénévoles, matériel).</span></div></div>
+    </div></section>
+  <section class="block"><h3><span class="n">5</span>INES pour toi</h3>
+    <div class="phones">
+      <figure><div class="phone"><div class="bar"></div><div class="t">Mon espace bénévole</div><div class="row"><span>Dim. 8 nov., matin</span><b>Accueil</b></div><div class="row"><span>Convocation</span><b>8 h 15</b></div><div class="row"><span>Lun. 9 nov., après-midi</span><b>Salle B3, PS</b></div><span class="quiet">Ton code personnel ouvre cet espace.</span></div><figcaption>Ton planning par demi-journée, ta salle si tu es PS, PSS ou évaluateur.</figcaption></figure>
+      <figure><div class="phone"><div class="bar"></div><div class="t">Accueil · série 3</div><div class="row"><span>J1-S3-01</span><b style="color:var(--b-ink)">Présent</b></div><div class="row"><span>J1-S3-02</span><b style="color:var(--b-ink)">Présent</b></div><div class="row"><span>J1-S3-03</span><b>—</b></div><div class="row"><span>J1-S3-04</span><b style="color:var(--b-ink)">Présent</b></div><div class="btn">Scanner un QR code</div></div><figcaption>L'émargement de l'équipe : qui est là, qui manque, qui remplace.</figcaption></figure>
+    </div></section>
+  <div class="remember"><h3>Trois choses à retenir</h3><ol><li>H-1 pour la première convocation de ta demi-journée.</li><li>Un seul chrono, une seule sonnerie, personne ne se croise.</li><li>Ton code personnel INES : ton planning, ta salle, ton accès.</li></ol><p class="small">Inscription par le lien bénévoles, une demi-journée par jour, autant de jours que tu veux.</p></div>
+</article>
+
+<div class="toolbar"><span class="quiet">Chaque vue a son lien : copie l'adresse une fois le public choisi, et envoie-la. L'impression ne garde que la vue affichée.</span><button class="btnx" id="copy">Copier le lien de cette vue</button></div>
+<footer>INES, Interface numérique d'ECOS et de simulation, par OMAS Externat. Chiffres et horaires du planning type (séries à 8 h 30, 11 h 30, 14 h 30 et 17 h) : ceux de ta session font foi dans ton espace. Captures et noms fictifs.</footer>
+</div>
+
+<script>
+(() => {
+  const SLOTS = {
+    A: [['A1','Entretien, interrogatoire','PS'],['A2','Iconographie',''],['A3','Procédure','Mannequin'],['A4','Annonce','PS'],['A5','Stratégie diagnostique','']],
+    B: [['B1','Communication interprofessionnelle','PSS'],['B2','Examen clinique','Mannequin'],['B3','Éducation, prévention','PS'],['B4','Synthèse paraclinique',''],['B5','Urgence','']],
+  };
+  const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.querySelectorAll('[data-slots]').forEach((el) => {
+    const k = el.dataset.slots;
+    el.innerHTML = SLOTS[k].map(([s, d, t]) => `<span class="pill"><i style="background:var(--${k === 'A' ? 'a' : 'b'})"></i>${s} · ${esc(d)}${t ? ` <span class="quiet">(${t})</span>` : ''}</span>`).join('');
+  });
+
+  // ---------- schémas ----------
+  const person = (x, y, color, label, r = 11) => `<g transform="translate(${x} ${y})"><circle r="${r}" fill="${color}" stroke="var(--bg)" stroke-width="2.5"/>${label ? `<text y="1" text-anchor="middle" dominant-baseline="central" font-size="${r > 10 ? 11 : 9}" font-weight="800" fill="#fff">${label}</text>` : ''}</g>`;
+
+  // Le circuit : deux rangées de cinq salles, les dix candidats et leur sens de rotation
+  const SHORT = { A1: 'Entretien', A2: 'Iconographie', A3: 'Procédure', A4: 'Annonce', A5: 'Stratégie dg', B1: 'Com. interpro.', B2: 'Examen clinique', B3: 'Éducation', B4: 'Synthèse', B5: 'Urgence' };
+  function circuit() {
+    const W = 560, H = 392, rw = 94, rh = 70, gap = 10, x0 = 30;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Deux circuits de cinq salles, dix candidats qui tournent">`;
+    const row = (k, y, color, soft) => SLOTS[k].map(([slot, d, t], i) => {
+      const x = x0 + i * (rw + gap);
+      return `<rect x="${x}" y="${y}" width="${rw}" height="${rh}" rx="12" fill="${soft}" stroke="${color}" stroke-width="2"/>
+        <text x="${x + 10}" y="${y + 23}" font-size="16" font-weight="800" fill="${color}">${slot}</text>
+        <text x="${x + 10}" y="${y + 41}" font-size="10" fill="var(--ink-2)">${SHORT[slot]}</text>
+        ${t ? `<text x="${x + 10}" y="${y + 57}" font-size="9" font-weight="700" fill="var(--ps)">${t}</text>` : ''}`;
+    }).join('');
+    const yA = 34, yB = 288;
+    s += `<text x="${x0}" y="24" font-size="12" font-weight="700" letter-spacing="2" fill="var(--a)">CIRCUIT A</text>`;
+    s += row('A', yA, 'var(--a)', 'var(--a-soft)');
+    s += `<text x="${x0}" y="${yB - 12}" font-size="12" font-weight="700" letter-spacing="2" fill="var(--b-ink)">CIRCUIT B</text>`;
+    s += row('B', yB, 'var(--b)', 'var(--b-soft)');
+    const xEnd = x0 + 4 * (rw + gap) + rw;
+    s += `<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="var(--ink-3)"/></marker></defs>`;
+    for (let i = 0; i < 5; i++) {
+      const x = x0 + i * (rw + gap) + rw / 2;
+      s += person(x, yA + rh + 18, 'var(--stu)', i + 1);
+      s += person(x, yB - 40, 'var(--stu)', i + 6);
+    }
+    s += `<path d="M${x0 + 10} ${yA + rh + 44} H${xEnd - 10}" stroke="var(--ink-3)" stroke-width="1.5" fill="none" marker-end="url(#arr)" stroke-dasharray="4 4"/>`;
+    s += `<text x="${(x0 + xEnd) / 2}" y="${yA + rh + 62}" text-anchor="middle" font-size="11" fill="var(--ink-2)">un tour = une salle vers la droite ; après A5, on revient à A1</text>`;
+    s += `<rect x="${(x0 + xEnd) / 2 - 150}" y="${yA + rh + 76}" width="300" height="26" rx="13" fill="var(--lav)" opacity=".35"/>`;
+    s += `<text x="${(x0 + xEnd) / 2}" y="${yA + rh + 93}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">à la pause, les deux groupes changent de circuit</text>`;
+    s += `<path d="M${xEnd - 10} ${yB - 66} H${x0 + 10}" stroke="var(--ink-3)" stroke-width="1.5" fill="none" marker-end="url(#arr)" stroke-dasharray="4 4"/>`;
+    s += `<text x="${(x0 + xEnd) / 2}" y="${yB - 72}" text-anchor="middle" font-size="11" fill="var(--ink-2)">places 6 à 10 : même chose sur le circuit B</text>`;
+    return s + '</svg>';
+  }
+
+  // Une série : convocation, dix tours, pause, débrief
+  function serie() {
+    const W = 760, H = 150, x0 = 95, scale = 4; // 1 min = 4 px
+    const t = (m) => x0 + m * scale;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Déroulé d'une série">`;
+    const band = (m0, m1, y, h, fill, label, color = '#fff', size = 11) => `<rect x="${t(m0)}" y="${y}" width="${t(m1) - t(m0)}" height="${h}" rx="6" fill="${fill}"/><text x="${(t(m0) + t(m1)) / 2}" y="${y + h / 2 + 1}" text-anchor="middle" dominant-baseline="central" font-size="${size}" font-weight="700" fill="${color}">${label}</text>`;
+    s += band(-15, 0, 40, 36, 'var(--team-soft)', 'Accueil', 'var(--team)', 10);
+    for (let r = 1; r <= 10; r++) {
+      const m0 = (r - 1) * 10 + (r > 5 ? 10 : 0);
+      const first = r <= 5;
+      s += band(m0, m0 + 2, 40, 36, 'var(--soft-2)', '', 'var(--ink-2)');
+      s += band(m0 + 2, m0 + 10, 40, 36, first ? 'var(--a)' : 'var(--b)', `${r}`);
+    }
+    s += band(50, 60, 40, 36, 'var(--lav)', 'Pause', 'var(--ink)', 10);
+    s += band(110, 140, 40, 36, 'var(--ps-soft)', 'Débrief, 30 min', 'var(--ps)');
+    const tick = (m, label, strong) => `<line x1="${t(m)}" y1="84" x2="${t(m)}" y2="92" stroke="var(--ink-3)"/><text x="${t(m)}" y="106" text-anchor="middle" font-size="${strong ? 12 : 11}" font-weight="${strong ? 800 : 500}" fill="var(--ink)">${label}</text>`;
+    s += `<line x1="${t(-15)}" y1="84" x2="${t(140)}" y2="84" stroke="var(--ink-3)"/>`;
+    s += tick(-15, '8 h 15', true) + tick(0, '8 h 30', true) + tick(50, '9 h 20') + tick(60, '9 h 30') + tick(110, '10 h 20', true) + tick(140, '10 h 50', true);
+    s += `<text x="${t(-15)}" y="24" font-size="11" fill="var(--ink-2)">Convocation</text>`;
+    s += `<text x="${t(25)}" y="24" text-anchor="middle" font-size="11" fill="var(--ink-2)">cinq tours sur le premier circuit</text>`;
+    s += `<text x="${t(85)}" y="24" text-anchor="middle" font-size="11" fill="var(--ink-2)">cinq tours sur le second</text>`;
+    s += `<rect x="${t(0)}" y="122" width="8" height="8" fill="var(--soft-2)" rx="2"/><text x="${t(0) + 13}" y="130" font-size="10.5" fill="var(--ink-2)">2 min : vignette devant la porte</text>`;
+    s += `<rect x="${t(42)}" y="122" width="8" height="8" fill="var(--a)" rx="2"/><text x="${t(42) + 13}" y="130" font-size="10.5" fill="var(--ink-2)">8 min : la station</text>`;
+    s += `<text x="${t(140)}" y="130" text-anchor="end" font-size="10.5" fill="var(--ink-2)">exemple de la série de 8 h 30</text>`;
+    return s + '</svg>';
+  }
+
+  // Une journée : quatre séries, les demi-journées, l'heure d'arrivée des bénévoles
+  function journee() {
+    const W = 760, H = 190, x0 = 40, h0 = 7 * 60, scale = 760 / (12 * 60 + 20); // 7 h à 19 h 20
+    const t = (m) => x0 + (m - h0) * scale * 0.9;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Les quatre séries d'une journée">`;
+    const SER = [['8 h 15', 8 * 60 + 15, 8 * 60 + 30], ['11 h 10', 11 * 60 + 10, 11 * 60 + 30], ['14 h 15', 14 * 60 + 15, 14 * 60 + 30], ['16 h 45', 16 * 60 + 45, 17 * 60]];
+    // demi-journées
+    s += `<rect x="${t(7 * 60 + 15)}" y="30" width="${t(12 * 60 + 10) - t(7 * 60 + 15)}" height="110" rx="12" fill="var(--soft)"/>`;
+    s += `<rect x="${t(13 * 60 + 15)}" y="30" width="${t(19 * 60 + 10) - t(13 * 60 + 15)}" height="110" rx="12" fill="var(--soft)"/>`;
+    s += `<text x="${t(7 * 60 + 25)}" y="48" font-size="11" font-weight="700" letter-spacing="2" fill="var(--ink-3)">MATIN</text><text x="${t(13 * 60 + 25)}" y="48" font-size="11" font-weight="700" letter-spacing="2" fill="var(--ink-3)">APRÈS-MIDI</text>`;
+    SER.forEach(([conv, c, st], i) => {
+      const end = st + 110, deb = end + 30;
+      s += `<rect x="${t(c)}" y="62" width="${t(st) - t(c)}" height="30" rx="6" fill="var(--team-soft)"/>`;
+      s += `<rect x="${t(st)}" y="62" width="${t(end) - t(st)}" height="30" rx="6" fill="${i % 2 ? 'var(--b)' : 'var(--a)'}"/><text x="${(t(st) + t(end)) / 2}" y="78" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="800" fill="#fff">Série ${i + 1}</text>`;
+      s += `<rect x="${t(end)}" y="62" width="${t(deb) - t(end)}" height="30" rx="6" fill="var(--ps-soft)"/>`;
+      s += `<text x="${t(c)}" y="110" font-size="11" font-weight="700" fill="var(--ink)">${conv}</text>`;
+    });
+    // arrivée des bénévoles et évaluateurs
+    const arr = (m, label) => `<g transform="translate(${t(m)} 0)"><path d="M0 128 l-5 -8 h10z" fill="var(--team)"/><text x="0" y="146" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--team)">${label}</text></g>`;
+    s += arr(7 * 60 + 15, 'H-1 : équipe du matin') + arr(13 * 60 + 15, 'H-1 : équipe de l\'après-midi');
+    // légende
+    const leg = (x, fill, label) => `<rect x="${x}" y="168" width="10" height="10" rx="2" fill="${fill}"/><text x="${x + 15}" y="177" font-size="10.5" fill="var(--ink-2)">${label}</text>`;
+    s += leg(x0, 'var(--team-soft)', 'accueil et émargement') + leg(x0 + 150, 'var(--a)', 'les dix stations (1 h 50)') + leg(x0 + 320, 'var(--ps-soft)', 'débrief (30 min)');
+    s += `<text x="${W - 10}" y="177" text-anchor="end" font-size="10.5" fill="var(--ink-3)">horaires du planning type</text>`;
+    return s + '</svg>';
+  }
+
+  // La salle vue d'en haut
+  function salle() {
+    const W = 520, H = 300;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Une salle d'ECOS vue d'en haut">`;
+    s += `<rect x="20" y="20" width="${W - 40}" height="${H - 40}" rx="16" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>`;
+    s += `<rect x="20" y="20" width="${W - 40}" height="${H - 40}" rx="16" fill="var(--soft)" opacity=".6"/>`;
+    // porte et vignette
+    s += `<rect x="20" y="110" width="6" height="70" fill="var(--ink)"/><path d="M26 110 q60 35 0 70" fill="none" stroke="var(--ink-3)" stroke-dasharray="3 3"/>`;
+    s += `<rect x="2" y="60" width="60" height="40" rx="6" fill="var(--bg)" stroke="var(--line)"/><text x="32" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="var(--ink)">Vignette</text><text x="32" y="89" text-anchor="middle" font-size="8.5" fill="var(--ink-2)">sur la porte</text>`;
+    // lit ou table
+    s += `<rect x="290" y="70" width="170" height="80" rx="10" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/><text x="400" y="113" text-anchor="middle" font-size="10" fill="var(--ink-3)">table d'examen</text>`;
+    // PS
+    s += person(318, 110, 'var(--ps)', 'PS', 15) + `<text x="375" y="168" text-anchor="middle" font-size="10" fill="var(--ps)" font-weight="700">patient standardisé</text>`;
+    // candidat
+    s += person(230, 150, 'var(--stu)', '4', 15) + `<text x="230" y="180" text-anchor="middle" font-size="10" fill="var(--stu)" font-weight="700">candidat</text>`;
+    // évaluateurs
+    s += `<rect x="300" y="196" width="150" height="56" rx="10" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>`;
+    s += person(340, 222, 'var(--eva)', 'É1', 15) + person(410, 222, 'var(--eva)', 'É2', 15);
+    s += `<rect x="328" y="238" width="22" height="12" rx="3" fill="var(--ink)"/><rect x="398" y="238" width="22" height="12" rx="3" fill="var(--ink)"/>`;
+    s += `<text x="375" y="266" text-anchor="middle" font-size="10" fill="var(--eva)" font-weight="700">un ou deux évaluateurs,</text><text x="375" y="279" text-anchor="middle" font-size="10" fill="var(--eva)" font-weight="700">la grille sur le téléphone</text>`;
+    // matériel
+    s += `<rect x="60" y="210" width="110" height="50" rx="8" fill="var(--bg)" stroke="var(--line)"/><text x="115" y="230" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--ink)">matériel</text><text x="115" y="244" text-anchor="middle" font-size="9" fill="var(--ink-2)">gants, SHA, documents</text>`;
+    // chrono
+    s += `<circle cx="${W - 60}" cy="50" r="18" fill="var(--bg)" stroke="var(--ink)" stroke-width="2"/><line x1="${W - 60}" y1="50" x2="${W - 60}" y2="38" stroke="var(--ink)" stroke-width="2"/><line x1="${W - 60}" y1="50" x2="${W - 50}" y2="56" stroke="var(--ink)" stroke-width="2"/><text x="${W - 60}" y="84" text-anchor="middle" font-size="9.5" fill="var(--ink-2)">même chrono partout</text>`;
+    s += `<text x="40" y="44" font-size="14" font-weight="800" fill="var(--a)">A1</text><text x="66" y="44" font-size="11" fill="var(--ink-2)">Entretien, interrogatoire</text>`;
+    return s + '</svg>';
+  }
+
+  // Le tour de dix minutes, côté salle
+  function tour() {
+    const W = 760, H = 170, x0 = 30, scale = 70;
+    const t = (m) => x0 + m * scale;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Un tour de dix minutes">`;
+    const lane = (y, label) => `<text x="${x0}" y="${y - 6}" font-size="11" font-weight="700" letter-spacing="1.5" fill="var(--ink-3)">${label}</text>`;
+    const seg = (m0, m1, y, fill, label, color = '#fff') => `<rect x="${t(m0)}" y="${y}" width="${t(m1) - t(m0)}" height="26" rx="6" fill="${fill}"/><text x="${(t(m0) + t(m1)) / 2}" y="${y + 14}" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="700" fill="${color}">${label}</text>`;
+    s += lane(40, 'CANDIDAT') + seg(0, 2, 40, 'var(--soft-2)', 'lit la vignette', 'var(--ink)') + seg(2, 10, 40, 'var(--stu)', 'huit minutes dans la salle');
+    s += lane(86, 'ÉVALUATEUR') + seg(0, 2, 86, 'var(--eva-soft)', 'finit la grille précédente', 'var(--eva)') + seg(2, 10, 86, 'var(--eva)', 'observe, coche, écrit un mot');
+    s += lane(132, 'PS / PSS') + seg(0, 2, 132, 'var(--ps-soft)', 'se remet en place', 'var(--ps)') + seg(2, 10, 132, 'var(--ps)', 'joue la même scène');
+    for (const [m, l] of [[0, 'sonnerie : tour suivant'], [2, 'sonnerie : on entre'], [10, 'sonnerie : on sort']]) {
+      s += `<line x1="${t(m)}" y1="28" x2="${t(m)}" y2="160" stroke="var(--ink-3)" stroke-dasharray="3 3"/><text x="${t(m) + (m === 10 ? -4 : 4)}" y="${H - 2}" text-anchor="${m === 10 ? 'end' : 'start'}" font-size="10" fill="var(--ink-2)">${l}</text>`;
+    }
+    return s + '</svg>';
+  }
+
+  // Anatomie de la grille
+  function grille() {
+    const W = 520, H = 330;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Anatomie d'une grille">`;
+    s += `<rect x="10" y="10" width="${W - 20}" height="${H - 20}" rx="16" fill="var(--bg)" stroke="var(--line)" stroke-width="2"/>`;
+    const line = (y, label, right, color = 'var(--ink)', bold = false) => `<text x="30" y="${y}" font-size="12" font-weight="${bold ? 800 : 500}" fill="${color}">${label}</text><text x="${W - 30}" y="${y}" text-anchor="end" font-size="12" font-weight="700" fill="${color}">${right}</text>`;
+    s += `<text x="30" y="40" font-size="11" font-weight="700" letter-spacing="2" fill="var(--a)">APTITUDES CLINIQUES ET TECHNIQUES</text>`;
+    const apt = [['Se présente, vérifie l\'identité', '1 pt', true], ['Recherche les signes de gravité', '2 pt', true], ['Évoque le diagnostic principal', '2 pt', false], ['Propose l\'examen complémentaire adapté', '1 pt', true]];
+    apt.forEach(([l, p, ok], i) => {
+      const y = 66 + i * 26;
+      s += `<rect x="30" y="${y - 12}" width="16" height="16" rx="4" fill="${ok ? 'var(--b)' : 'var(--bg)'}" stroke="${ok ? 'var(--b)' : 'var(--ink-3)'}"/>${ok ? `<path d="M34 ${y - 4} l3 3 l6 -7" stroke="#fff" stroke-width="2" fill="none"/>` : `<path d="M34 ${y - 8} l8 8 M42 ${y - 8} l-8 8" stroke="var(--ink-3)" stroke-width="1.5"/>`}`;
+      s += `<text x="54" y="${y}" font-size="12" fill="var(--ink)">${l}</text><text x="${W - 30}" y="${y}" text-anchor="end" font-size="12" font-weight="700" fill="${ok ? 'var(--b-ink)' : 'var(--ink-3)'}">${ok ? p : '0 / ' + p.split(' ')[0]}</text>`;
+    });
+    s += `<text x="54" y="172" font-size="11" fill="var(--ink-3)">… une dizaine d'items</text>`;
+    s += `<text x="30" y="200" font-size="11" font-weight="700" letter-spacing="2" fill="var(--a)">COMMUNICATION ET ATTITUDES</text>`;
+    const levels = ['Insuffisant', 'Limite', 'Satisfaisant', 'Bien', 'Excellent'];
+    s += `<text x="30" y="224" font-size="12" fill="var(--ink)">Écoute, reformule, s'adapte au patient</text>`;
+    levels.forEach((l, i) => { const x = 30 + i * 94; s += `<rect x="${x}" y="234" width="88" height="22" rx="6" fill="${i === 2 ? 'var(--a)' : 'var(--soft-2)'}"/><text x="${x + 44}" y="245" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="${i === 2 ? '#fff' : 'var(--ink-2)'}">${l}</text>`; });
+    s += `<text x="30" y="282" font-size="11" font-weight="700" letter-spacing="2" fill="var(--ink-3)">PERFORMANCE GLOBALE</text><text x="${W - 30}" y="282" text-anchor="end" font-size="11" fill="var(--ink-3)">ne compte pas dans la note</text>`;
+    s += `<rect x="30" y="292" width="${W - 60}" height="26" rx="8" fill="var(--b-soft)"/><text x="${W / 2}" y="305" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="800" fill="var(--b-ink)">Note = (aptitudes + communication) ÷ maximum × 20</text>`;
+    return s + '</svg>';
+  }
+
+  // Le script du PS : ce qu'il dit d'emblée, sur demande, jamais
+  function script() {
+    const W = 760, H = 210;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Les trois étages du script">`;
+    const col = (x, title, fill, color, lines) => {
+      s += `<rect x="${x}" y="20" width="230" height="${H - 40}" rx="14" fill="${fill}"/><text x="${x + 16}" y="48" font-size="12" font-weight="800" letter-spacing="1.5" fill="${color}">${title}</text>`;
+      lines.forEach((l, i) => { s += `<text x="${x + 16}" y="${76 + i * 22}" font-size="12" fill="var(--ink)">${l}</text>`; });
+    };
+    col(20, 'TU DIS D\'EMBLÉE', 'var(--ps-soft)', 'var(--ps)', ['« Bonjour docteur, j\'ai mal', 'au ventre depuis hier soir. »', 'Ta plainte, ton attitude,', 'ton émotion de départ.']);
+    col(265, 'SI ON TE LE DEMANDE', 'var(--soft)', 'var(--ink-2)', ['Antécédents, traitements,', 'allergies, contexte familial,', 'ce que tu as déjà pris.', 'Réponse courte, pas de rallonge.']);
+    col(510, 'JAMAIS', 'var(--soft-2)', 'var(--ink-3)', ['Le diagnostic, un indice,', 'une question qui aide,', 'un commentaire sur le candidat,', 'un détail hors script.']);
+    return s + '</svg>';
+  }
+
+  // Les postes des bénévoles sur un plan simplifié
+  function postes() {
+    const W = 560, H = 330;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Les postes des bénévoles">`;
+    const box = (x, y, w, h, fill, label, sub, color = 'var(--ink)') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" fill="${fill}" stroke="var(--line)"/><text x="${x + w / 2}" y="${y + 22}" text-anchor="middle" font-size="12" font-weight="800" fill="${color}">${label}</text>${sub ? `<text x="${x + w / 2}" y="${y + 38}" text-anchor="middle" font-size="9.5" fill="var(--ink-2)">${sub}</text>` : ''}`;
+    s += box(20, 20, 150, 90, 'var(--team-soft)', 'Accueil', 'émargement, petit déjeuner', 'var(--team)');
+    s += box(190, 20, 160, 90, 'var(--soft)', 'Salle d\'attente', 'la série suivante, isolée');
+    s += box(370, 20, 170, 90, 'var(--ps-soft)', 'Débrief', 'la série qui sort', 'var(--ps)');
+    s += `<text x="20" y="140" font-size="11" font-weight="700" letter-spacing="2" fill="var(--a)">CIRCUIT A</text>`;
+    for (let i = 0; i < 5; i++) s += `<rect x="${20 + i * 106}" y="150" width="96" height="46" rx="10" fill="var(--a-soft)" stroke="var(--a)"/><text x="${68 + i * 106}" y="178" text-anchor="middle" font-size="14" font-weight="800" fill="var(--a)">A${i + 1}</text>`;
+    s += `<rect x="20" y="206" width="520" height="28" rx="8" fill="var(--soft-2)"/><text x="280" y="224" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink-2)">couloir : chrono, sonnerie, orientation</text>`;
+    s += `<text x="20" y="258" font-size="11" font-weight="700" letter-spacing="2" fill="var(--b-ink)">CIRCUIT B</text>`;
+    for (let i = 0; i < 5; i++) s += `<rect x="${20 + i * 106}" y="268" width="96" height="46" rx="10" fill="var(--b-soft)" stroke="var(--b)"/><text x="${68 + i * 106}" y="296" text-anchor="middle" font-size="14" font-weight="800" fill="var(--b-ink)">B${i + 1}</text>`;
+    s += person(95, 124, 'var(--team)', 'B', 10) + person(280, 124, 'var(--team)', 'B', 10) + person(455, 124, 'var(--team)', 'B', 10) + person(520, 220, 'var(--team)', 'B', 10);
+    return s + '</svg>';
+  }
+
+  const FIGS = { circuit, serie, journee, salle, tour, grille, script, postes };
+  const CAPS = {
+    circuit: '', serie: 'La série de 8 h 30, du planning type : convocation 15 min avant, dix tours de 10 min, pause de 10 min, débrief de 30 min.',
+    journee: 'Quatre séries par jour. Chaque équipe de demi-journée arrive une heure avant la première convocation.', salle: 'Une station avec patient standardisé. Les stations « iconographie » ou « stratégie » n\'ont pas de PS, les stations de procédure ont un mannequin.',
+    tour: 'Trois sonneries par tour. Pendant la lecture de la vignette, la salle se remet en ordre.', grille: 'Une grille type. Les items et les points changent à chaque station, la logique est la même.',
+    script: 'Les trois étages d\'un script de patient standardisé.', postes: '',
+  };
+  document.querySelectorAll('[data-fig]').forEach((el) => { el.innerHTML = FIGS[el.dataset.fig]() + (CAPS[el.dataset.fig] && el.classList.contains('fig') ? `<p class="cap">${CAPS[el.dataset.fig]}</p>` : ''); });
+
+  // ---------- navigation par public ----------
+  const VIEWS = ['organisation', 'etudiants', 'evaluateurs', 'ps-pss', 'benevoles'];
+  function show(v) {
+    if (!VIEWS.includes(v)) v = 'organisation';
+    document.querySelectorAll('.view').forEach((a) => a.classList.toggle('on', a.id === `v-${v}`));
+    document.querySelectorAll('.pub').forEach((b) => { const on = b.dataset.v === v; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
+    document.title = `${{ organisation: 'L\'organisation', etudiants: 'Étudiants', evaluateurs: 'Évaluateurs', 'ps-pss': 'PS et PSS', benevoles: 'Bénévoles' }[v]} · Kit de présentation INES`;
+  }
+  document.querySelectorAll('.pub').forEach((b) => b.addEventListener('click', () => { location.hash = b.dataset.v; show(b.dataset.v); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
+  window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+  show(location.hash.slice(1));
+  document.getElementById('copy').addEventListener('click', async (e) => {
+    const url = `${location.origin}${location.pathname}#${document.querySelector('.pub.on')?.dataset.v || 'organisation'}`;
+    try { await navigator.clipboard.writeText(url); e.target.textContent = 'Lien copié'; } catch { e.target.textContent = url; }
+    setTimeout(() => { e.target.textContent = 'Copier le lien de cette vue'; }, 2500);
+  });
+})();
+</script>
+</body>
+</html>
