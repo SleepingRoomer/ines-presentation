@@ -337,8 +337,8 @@ footer{font-size:12.5px;color:var(--ink-3)}
   <div class="cards">
     <article class="step reveal" data-d="rappels" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/></svg></span>Rappels automatiques</h3><p>À 17 h (18 h l'été), un rappel part seul à tous ceux qui viennent le lendemain.</p><div class="who"><span class="w-stu"><i></i>Étudiants</span><span class="w-ben"><i></i>Accueil et logistique</span><span class="w-eva"><i></i>Évaluateurs</span></div></article>
     <article class="step reveal" data-d="montage" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V5a1 1 0 011-1h9l6 6v10"/><path d="M2 20h20"/><circle cx="11" cy="13" r="1"/></svg></span>Montage des salles</h3><p>Chaque salle montée comme le jour J, puis cochée « Salle prête » dans INES.</p><div class="who"><span class="w-eq"><i></i>Équipe</span><span class="w-ben"><i></i>Accueil et logistique</span></div></article>
-    <article class="step reveal" data-d="accueil-pret" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/><rect x="14" y="13" width="4" height="4"/></svg></span>Accueil prêt</h3><p>Étiquettes rangées par série, signalétique posée, planning affiché.</p><div class="who"><span class="w-ben"><i></i>Accueil et logistique</span><span class="w-eq"><i></i>Équipe</span></div></article>
-    <article class="step reveal" data-d="verifs" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>Dernières vérifications</h3><p>État du système au vert, codes de salle et sauvegarde prêts.</p><div class="who"><span class="w-eq"><i></i>Équipe</span></div></article>
+    <article class="step reveal" data-d="accueil-pret" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5"/><rect x="14" y="13" width="4" height="4"/></svg></span>Accueil prêt</h3><p>Étiquettes rangées par série, signalétique posée, code d'accueil donné.</p><div class="who"><span class="w-ben"><i></i>Accueil et logistique</span><span class="w-eq"><i></i>Équipe</span></div></article>
+    <article class="step reveal" data-d="verifs" tabindex="0" role="button" aria-haspopup="dialog"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span>Dernières vérifications</h3><p>Tableau de bord sans rien d'urgent, codes de salle et code d'accueil prêts.</p><div class="who"><span class="w-eq"><i></i>Équipe</span></div></article>
   </div>
 </section>
 
@@ -348,7 +348,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
   <div>
     <div class="dayline">
       <div class="slot reveal" data-d="briefing" tabindex="0" role="button"><span class="t">H-1</span><div><b>Arrivée et briefing</b><span>Café, installation, la grille en main. La saisie s'ouvre.</span></div></div>
-      <div class="slot reveal" data-d="accueil" tabindex="0" role="button"><span class="t">H-20 min</span><div><b>Accueil des candidats</b><span>Émargement par QR code, étiquette sur la blouse.</span></div></div>
+      <div class="slot reveal" data-d="accueil" tabindex="0" role="button"><span class="t">H-20 min</span><div><b>Accueil des candidats</b><span>Émargement par QR code, étiquette sur la blouse, brief des circuits.</span></div></div>
       <div class="slot reveal" data-d="rotation" tabindex="0" role="button"><span class="t">H</span><div><b>5 tours de 10 min, pause, 5 tours</b><span>On change de circuit à la pause.</span></div></div>
       <div class="slot reveal" data-d="debrief" tabindex="0" role="button"><span class="t">+1 h 50</span><div><b>Débrief de 30 min</b><span>Correction collective des stations.</span></div></div>
       <div class="slot static reveal"><span class="t">Fin</span><div><b>Rangement</b><span>La saisie ferme trois quarts d'heure après le dernier tour.</span></div></div>
@@ -418,8 +418,9 @@ footer{font-size:12.5px;color:var(--ink-3)}
     <details data-f="eva tous"><summary>Puis-je aider un candidat bloqué ?</summary><p>Non, on n'intervient pas pendant le passage. On note ce qu'on observe. Les explications viennent au débrief, juste après la série.</p></details>
     <details data-f="ps"><summary>Est-ce que je dois apprendre un texte ?</summary><p>Non, pas mot à mot. Ta fiche décrit le personnage, ses symptômes et ce qu'il répond. Tu la reçois au briefing avec le temps de la lire, et tu peux poser tes questions à l'équipe.</p></details>
     <details data-f="ps"><summary>Je donne les informations spontanément ?</summary><p>Seulement ce que ta fiche indique comme spontané. Le reste, uniquement si le candidat le demande. L'important est de jouer pareil pour tous les candidats.</p></details>
+    <details data-f="ps ben"><summary>Et si un PS ou un PSS ne vient pas ?</summary><p>Chaque demi-journée a au moins un PS ou PSS de réserve, qui reste près de la table de l'équipe. Il prend la place de l'absent et reçoit le script de la station sur place.</p></details>
     <details data-f="ps"><summary>Est-ce que je note aussi ?</summary><p>Non, c'est l'évaluateur qui remplit la grille. Toi, tu joues ton rôle du début à la fin du tour.</p></details>
-    <details data-f="ben"><summary>Que fait-on à l'accueil ?</summary><p>On émarge chaque candidat dans INES, en scannant son QR code ou depuis la liste de l'onglet Accueil. On lui donne son étiquette (numéro, prénom, circuit en couleur, QR code) et on l'oriente vers la salle d'attente. Les étiquettes sont rangées par série.</p></details>
+    <details data-f="ben"><summary>Que fait-on à l'accueil ?</summary><p>On émarge chaque candidat dans INES, en scannant son QR code ou depuis la liste de l'onglet Accueil. On lui donne son étiquette (numéro, prénom, circuit en couleur, QR code) et on l'oriente vers la salle d'attente. Les étiquettes sont rangées par série. Avant chaque série, tu fais le brief des circuits : l'écran « Brief des circuits » montre qui commence sur A ou sur B, et dans quelle salle.</p></details>
     <details data-f="ben"><summary>Un candidat n'est pas sur la liste.</summary><p>Ne le refuse pas toi-même : appelle l'équipe, qui vérifie dans INES (liste d'attente, changement de créneau, billet remboursé).</p></details>
     <details data-f="ben"><summary>Qui gère le chrono ?</summary><p>L'équipe. Une sonnerie commune marque chaque changement de salle, audible partout. Personne n'a à chronométrer dans sa salle.</p></details>
     <details data-f="ben"><summary>Il manque du matériel dans une salle.</summary><p>La réserve est à la table de l'équipe : gants, grilles papier, stylos, solution hydroalcoolique. Au besoin, regarde la liste de la salle dans l'onglet Matériel.</p></details>
@@ -499,9 +500,10 @@ footer{font-size:12.5px;color:var(--ink-3)}
         ['Côté bénévole', 'PS, PSS, accueil, logistique ou évaluateur, une demi-journée par jour. Tutoiement.'],
         ['Côté évaluateur', 'médecins et internes : statut, spécialité, disciplines préférées, demi-journée ou journée. Vouvoiement.'],
         ['Planning des salles', 'pour chaque demi-journée, « Compléter automatiquement » remplit les trous en tenant compte des préférences, puis « Enregistrer ».'],
+        ['PS ou PSS de réserve', 'au moins un par demi-journée, prêt à remplacer un absent. Il a sa ligne dans le planning des salles et le tableau de bord le signale s\'il manque.'],
         ['Suivi des bénévoles', 'qui est venu à quelles sessions, toutes sessions confondues.'],
       ],
-      tips: ['Compter un évaluateur et, selon la station, un PS ou un PSS par salle et par demi-journée, plus deux ou trois personnes à l\'accueil.', 'Le code personnel reçu à l\'inscription ouvre l\'espace du bénévole : planning, salle, et le jour J le bouton « Ouvrir ma salle ».', 'Aucune préparation demandée : tout est expliqué au briefing.'],
+      tips: ['Compter les évaluateurs et, selon la station, un PS ou un PSS par salle et par demi-journée, un PS ou PSS de réserve, et deux ou trois personnes à l\'accueil.', 'Le code personnel reçu à l\'inscription ouvre l\'espace du bénévole : planning, salle, et le jour J le bouton « Ouvrir ma salle ».', 'Aucune préparation demandée : tout est expliqué au briefing.'],
       mails: ['Confirmation d\'inscription avec le code personnel', 'Rappel la veille, avec la salle et l\'heure d\'arrivée'] },
     convocations: { p: 1, title: 'Convocations', who: ['eq', 'stu'],
       lead: 'Quand le planning est publié et les candidats numérotés, un clic envoie à chacun sa convocation. Tout ce qu\'il doit savoir est aussi dans son espace.',
@@ -546,6 +548,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
       mock: `<div class="m-label"><div><b class="m-num">J1-S2-04</b><span>Yasmine</span><span class="m-circ">Départ circuit A</span></div>${qr()}</div>`,
       path: [
         ['Session › Accueil › Imprimer les étiquettes', 'une planche par série : numéro, prénom, circuit de départ en couleur et QR code. Pas de nom de famille.'],
+        ['Session › Accueil › Code d\'accueil', 'à créer et à donner à l\'étudiant qui tient l\'accueil. Avec l\'onglet « Accueil » de la page de connexion, il émarge, imprime les étiquettes et fait le brief des circuits, sans accès au reste.'],
         ['Signalétique', 'accueil, salle d\'attente, circuits A et B, débrief, équipe, silence.'],
         ['Planning imprimé', 'une page par série, en secours.'],
       ],
@@ -554,6 +557,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
       lead: 'Un dernier tour pour être sûr que rien ne cassera le jour J.',
       mock: `<div class="m-table">${[['Migrations', 'à jour'], ['E-mails (Brevo)', 'configuré'], ['Tâche du soir', 'passée à 17:00'], ['Saisie des grilles', 'ouvrira à 7:40']].map(([a, b]) => `<div class="m-row"><span><i class="m-dot"></i>${a}</span><b>${b}</b></div>`).join('')}</div>`,
       path: [
+        ['Tableau de bord de la session', 'le premier onglet liste tout ce qui reste à faire, du plus urgent au moins urgent : postes à pourvoir, réserve, impressions, salles prêtes… Chaque ligne mène au bon onglet.'],
         ['État du système', 'tout doit être au vert : migrations, e-mails, tâche du soir.'],
         ['Réglages › Saisie des grilles', 'en automatique, elle ouvre une heure avant la première convocation et ferme trois quarts d\'heure après le dernier tour.'],
         ['Réglages › Codes des salles', 'imprimer les fiches et garder de quoi générer un nouveau code si besoin.'],
@@ -571,12 +575,13 @@ footer{font-size:12.5px;color:var(--ink-3)}
       ],
       tips: ['Les évaluateurs en binôme se mettent d\'accord sur les items ambigus pendant le briefing, pas pendant les passages.', 'La saisie s\'ouvre d\'elle-même à ce moment-là.'] },
     accueil: { p: 3, title: 'Accueil des candidats', who: ['ben', 'stu'],
-      lead: 'Chaque candidat est émargé dans INES, reçoit son étiquette et attend dans la salle d\'attente.',
+      lead: 'Chaque candidat est émargé dans INES et reçoit son étiquette. Avant la série, l\'étudiant de l\'accueil fait le brief : circuit et salle de départ de chacun.',
       mock: phone('Accueil', '<div class="m-ok">✓ Présence enregistrée</div>' + row('J1-S2-04', 'Yasmine') + row('Étiquette', 'Série 2, place 4') + '<span class="m-note">Circuit A au départ</span>'),
       path: [
         ['Scanner le QR code', 'avec l\'appareil photo d\'un téléphone de l\'équipe connecté à INES. L\'écran dit « Présence enregistrée » et quelle étiquette donner.'],
         ['Ou Accueil › Liste de l\'accueil', 'chercher le nom et cocher.'],
         ['Étiquette sur la blouse', 'numéro, prénom, circuit de départ en couleur, QR code.'],
+        ['Brief des circuits', 'avant chaque série, l\'étudiant de l\'accueil montre à l\'écran qui commence sur quel circuit, la salle de départ de chacun et celle après la pause (A2 puis B2), puis rappelle les consignes.'],
       ],
       tips: ['Un candidat absent de la liste : on appelle l\'équipe, on ne refuse pas soi-même.', 'Un billet annulé s\'affiche comme tel : la place a pu être donnée à quelqu\'un de la liste d\'attente.'] },
     rotation: { p: 3, title: 'Les tours', who: ['stu', 'eva'],
