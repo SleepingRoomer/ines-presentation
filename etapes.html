@@ -349,7 +349,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
     <div class="dayline">
       <div class="slot reveal" data-d="briefing" tabindex="0" role="button"><span class="t">H-1</span><div><b>Arrivée et briefing</b><span>Café, installation, la grille en main. La saisie s'ouvre.</span></div></div>
       <div class="slot reveal" data-d="accueil" tabindex="0" role="button"><span class="t">H-20 min</span><div><b>Accueil des candidats</b><span>Émargement par QR code, étiquette sur la blouse, brief des circuits.</span></div></div>
-      <div class="slot reveal" data-d="rotation" tabindex="0" role="button"><span class="t">H</span><div><b>5 tours de 10 min, pause, 5 tours</b><span>On change de circuit à la pause.</span></div></div>
+      <div class="slot reveal" data-d="rotation" tabindex="0" role="button"><span class="t">H</span><div><b>5 tours de 10 min, pause, 5 tours</b><span>Chaque tour lancé depuis l'accueil, même chrono pour tous.</span></div></div>
       <div class="slot reveal" data-d="debrief" tabindex="0" role="button"><span class="t">+1 h 50</span><div><b>Débrief de 30 min</b><span>Correction collective des stations.</span></div></div>
       <div class="slot static reveal"><span class="t">Fin</span><div><b>Rangement</b><span>La saisie ferme trois quarts d'heure après le dernier tour.</span></div></div>
     </div>
@@ -406,14 +406,14 @@ footer{font-size:12.5px;color:var(--ink-3)}
     <details data-f="tous"><summary>Est-ce que je dois préparer quelque chose ?</summary><p>Non. Tout est expliqué au briefing, une heure avant la première série : le déroulé, ta station, la grille. Viens simplement à l'heure indiquée dans ton e-mail de rappel.</p></details>
     <details data-f="tous"><summary>À quelle heure j'arrive ?</summary><p>Une heure avant la première convocation de ta demi-journée. L'heure exacte est dans ton espace INES et dans le rappel envoyé la veille à 17 h (18 h l'été).</p></details>
     <details data-f="tous"><summary>Combien de temps dure une série ?</summary><p>2 h 20 : dix tours de 10 minutes avec une pause de 10 minutes au milieu, puis 30 minutes de débrief. Une demi-journée en enchaîne en général deux ou trois.</p></details>
-    <details data-f="tous"><summary>Où trouver mon planning ?</summary><p>Dans ton espace INES, avec le code personnel reçu par e-mail. Tu y vois ta salle, tes horaires et, le jour J, un bouton qui ouvre directement ta salle.</p></details>
+    <details data-f="tous"><summary>Où trouver mon planning ?</summary><p>Dans ton espace INES, avec le code personnel reçu par e-mail. Tu y vois ta salle, tes horaires et, le jour J, un bouton qui ouvre directement ta salle. En bas, « Le déroulé, en bref » reprend le film, l'essentiel et les questions de ton rôle.</p></details>
     <details data-f="eva"><summary>Comment je sais quel candidat est devant moi ?</summary><p>Son numéro est sur l'étiquette collée sur sa blouse, avec un QR code. Ton écran affiche aussi le numéro attendu dans ta salle à ce moment-là. Si tu ouvres la grille d'un candidat qui n'est pas prévu, INES te demande de confirmer.</p></details>
     <details data-f="eva"><summary>Pourquoi je ne vois pas le nom des candidats ?</summary><p>C'est voulu : les candidats sont anonymes pour les évaluateurs, pour que la note ne dépende que de ce qui se passe dans la salle. Tu n'as que leur numéro.</p></details>
     <details data-f="eva"><summary>Comment on note un item ?</summary><p>Observé, c'est 1 point. Pas observé, c'est 0. Il n'y a pas de demi-point : si tu hésites, demande-toi si le candidat l'a dit ou fait clairement. La communication se note à part, de 0 à 1 par quart de point (insuffisant, limite, satisfaisant, très satisfaisant, remarquable).</p></details>
     <details data-f="eva"><summary>On est deux évaluateurs dans la salle, comment ça marche ?</summary><p>Chacun remplit sa propre grille sans se concerter pendant le passage. La note du candidat est la moyenne des deux grilles.</p></details>
     <details data-f="eva"><summary>Mon téléphone n'a plus de réseau ou de batterie.</summary><p>Sans réseau, la grille reste sur le téléphone (« En attente d'envoi ») et part dès que la connexion revient. Sans batterie, prends une grille papier de secours dans la salle, puis saisis-la dans INES ensuite. Des chargeurs sont à la table de l'équipe.</p></details>
     <details data-f="eva"><summary>Je me suis trompé de candidat en enregistrant.</summary><p>Préviens l'équipe : elle voit les grilles suspectes dans l'onglet En direct et peut supprimer une grille erronée. Tu ressaisis ensuite la bonne.</p></details>
-    <details data-f="eva"><summary>Un candidat ne vient pas.</summary><p>Coche « Absent » sur sa grille. Il n'aura pas de note pour ta station et ça ne compte pas contre toi.</p></details>
+    <details data-f="eva"><summary>Un candidat ne vient pas.</summary><p>S'il n'a pas émargé, « Noter absent » apparaît sur ton écran quelques minutes après le début de son tour. Arrivé à la dernière minute sans passer par l'accueil ? S'il est devant toi, remplis sa grille normalement. Une absence notée par erreur se remplace en remplissant la grille.</p></details>
     <details data-f="eva"><summary>Que mettre dans le mot de retour ?</summary><p>Une ou deux phrases concrètes : ce qui était bien, ce qu'il faut travailler. C'est ce que le candidat relira le soir, avec la correction.</p></details>
     <details data-f="eva tous"><summary>Puis-je aider un candidat bloqué ?</summary><p>Non, on n'intervient pas pendant le passage. On note ce qu'on observe. Les explications viennent au débrief, juste après la série.</p></details>
     <details data-f="ps"><summary>Est-ce que je dois apprendre un texte ?</summary><p>Non, pas mot à mot. Ta fiche décrit le personnage, ses symptômes et ce qu'il répond. Tu la reçois au briefing avec le temps de la lire, et tu peux poser tes questions à l'équipe.</p></details>
@@ -422,7 +422,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
     <details data-f="ps"><summary>Est-ce que je note aussi ?</summary><p>Non, c'est l'évaluateur qui remplit la grille. Toi, tu joues ton rôle du début à la fin du tour.</p></details>
     <details data-f="ben"><summary>Que fait-on à l'accueil ?</summary><p>On émarge chaque candidat dans INES, en scannant son QR code ou depuis la liste de l'onglet Accueil. On lui donne son étiquette (numéro, prénom, circuit en couleur, QR code) et on l'oriente vers la salle d'attente. Les étiquettes sont rangées par série. Avant chaque série, tu fais le brief des circuits : l'écran « Brief des circuits » montre qui commence sur A ou sur B, et dans quelle salle.</p></details>
     <details data-f="ben"><summary>Un candidat n'est pas sur la liste.</summary><p>Ne le refuse pas toi-même : appelle l'équipe, qui vérifie dans INES (liste d'attente, changement de créneau, billet remboursé).</p></details>
-    <details data-f="ben"><summary>Qui gère le chrono ?</summary><p>L'équipe. Une sonnerie commune marque chaque changement de salle, audible partout. Personne n'a à chronométrer dans sa salle.</p></details>
+    <details data-f="ben"><summary>Qui gère le chrono ?</summary><p>L'étudiant de l'accueil, depuis l'écran « Chrono » d'INES : il lance chaque tour, la pause et le débrief. Le décompte s'affiche en haut de tous les téléphones et de l'écran de projection. Une sonnerie commune marque aussi le changement de salle.</p></details>
     <details data-f="ben"><summary>Il manque du matériel dans une salle.</summary><p>La réserve est à la table de l'équipe : gants, grilles papier, stylos, solution hydroalcoolique. Au besoin, regarde la liste de la salle dans l'onglet Matériel.</p></details>
     <details data-f="tous"><summary>Et après la session, on me demande quelque chose ?</summary><p>Le lendemain, tu reçois un merci avec un lien vers ton espace : trois questions et un mot libre sur la journée. Deux minutes, lues par l'équipe pour préparer la suivante.</p></details>
     <details data-f="tous"><summary>Quand les étudiants ont-ils leurs résultats ?</summary><p>La note par station arrive dans leur espace. Le détail des grilles et les commentaires ne s'affichent qu'après la dernière série de la session, pour que rien ne circule d'un jour à l'autre. Ensuite, ils ont quelques jours pour faire une réclamation.</p></details>
@@ -590,7 +590,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
       path: [
         ['Places 1 à 5', 'commencent par le circuit A (A1 à A5), puis passent sur le B.'],
         ['Places 6 à 10', 'commencent par le B, puis passent sur le A.'],
-        ['Un tour', '10 minutes dans la salle. Une sonnerie commune marque le changement.'],
+        ['Un tour', '10 minutes dans la salle. L\'étudiant de l\'accueil lance chaque tour depuis l\'écran « Chrono » : le décompte s\'affiche en haut de tous les téléphones (évaluateurs, accueil, projection), et une sonnerie commune marque le changement.'],
         ['La pause', '10 minutes après le cinquième tour.'],
       ],
       tips: ['Le circuit de départ est imprimé en couleur sur l\'étiquette : bleu pour A, turquoise pour B.', 'Le parcours salle par salle est aussi dans l\'espace de chaque étudiant.'] },
@@ -599,7 +599,8 @@ footer{font-size:12.5px;color:var(--ink-3)}
       mock: phone('Salle A2', '<span class="m-note">Dans ta salle en ce moment</span><div class="m-now">J1-S2-04</div>' + row('Ensuite', 'J1-S2-05') + row('Se présente', '<span class="m-pill ok">1</span>') + row('Recherche la gravité', '<span class="m-pill ok">1</span>') + row('Évoque le diagnostic', '<span class="m-pill no">0</span>') + '<div class="m-btn">Enregistrer la grille</div>'),
       path: [
         ['Ouvrir ma salle', 'avec le code personnel reçu par e-mail. Ou bien avec la fiche « code de salle », puis choisir son nom dans la liste.'],
-        ['Dans ta salle en ce moment', 'le haut de l\'écran montre le numéro attendu et le suivant. On peut aussi scanner le QR de l\'étiquette.'],
+        ['Dans ta salle en ce moment', 'le numéro attendu et le suivant, d\'après le tour lancé par l\'accueil, avec le chrono en haut de l\'écran et « a émargé » ou non. On peut aussi scanner le QR de l\'étiquette.'],
+        ['Absent', '« Noter absent » n\'apparaît que quelques minutes après le début du tour, si le candidat n\'a pas émargé, avec une confirmation. Arrivé à la dernière minute et devant toi ? On remplit sa grille normalement : il compte comme présent.'],
         ['La grille', 'chaque item : observé (1) ou non (0). Communication : cinq niveaux de 0 à 1. Un mot de retour pour le candidat.'],
         ['Enregistrer', 'si le candidat n\'est pas celui prévu dans la salle à cette heure, INES demande confirmation.'],
       ],
@@ -620,6 +621,7 @@ footer{font-size:12.5px;color:var(--ink-3)}
         ['En direct › Grilles en retard', 'les salles qui n\'ont pas encore saisi les candidats déjà passés.'],
         ['En direct › Grilles à vérifier', 'les grilles enregistrées avant le passage prévu du candidat : souvent une erreur de numéro.'],
         ['Bulletin du candidat', 'pour supprimer une grille erronée. L\'action est notée dans le journal.'],
+        ['Chrono de la série', 'l\'accueil ou l\'équipe lance le tour 1, le tour 2… la pause, le débrief. L\'écran montre l\'écart avec le planning et qui est dans quelle salle.'],
         ['En direct › Message aux salles', 'un message (« Pause prolongée de 5 min », « B3 : le PS change ») pour toutes les salles ou une seule. Il s\'affiche en bandeau sur les téléphones des évaluateurs, à l\'accueil et sur l\'écran de projection, en moins de 30 secondes.'],
         ['Mode projection', 'un écran à l\'accueil : heure, série et tour en cours, grilles en retard, course des évaluateurs.'],
       ],
